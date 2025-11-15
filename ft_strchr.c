@@ -6,7 +6,7 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 19:27:10 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/13 16:35:18 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/14 12:46:26 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,20 +60,6 @@ void	test2(void)
 }
 
 void	test3(void)
-{
-	char	str1[10] = "ABCDEFG";
-	int		schr;
-
-	schr = '\0';
-	printf("	STRING NULL\n");
-	printf("R:%s\n", strchr(str1, schr));
-	printf("M:%s\n", ft_strchr(str1, schr));
-	if ((ft_strchr(str1, schr) == strchr(str1, schr)))
-		printf("\033[0;32mOK!\n\033[0m");
-	else
-		printf("\033[0;31mKO\n\033[0m");
-}
-void	test4(void)
 {
 	char	str1[10] = "ABCDEFG";
 	int		schr;

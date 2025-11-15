@@ -6,7 +6,7 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 14:45:53 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/08 18:18:35 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/14 13:33:07 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_isalpha(int c)
 
 int	main(int argc, char *argv[])
 {
-	int	i;
+	int i;
 
 	i = 1;
 	while ((i != argc))

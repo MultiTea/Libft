@@ -6,11 +6,13 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 20:06:58 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/10 19:37:07 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/14 20:56:26 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include <stdio.h>
+#include <string.h>
 
 size_t	ft_strlen(const char *s)
 {
@@ -21,3 +23,32 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
+
+// void	test1(void)
+//{
+//	char	*str;
+
+//	str = "Bonjour les terriens !\0";
+//	if ((ft_strlen(str) == strlen(str)))
+//		printf("\033[0;32mOK!\n\033[0m");
+//	else
+//		printf("\033[0;31mKO\n\033[0m");
+//}
+
+// void	test2(void)
+//{
+//	char	*str;
+
+//	str = "\0";
+//	if ((ft_strlen(str) == strlen(str)))
+//		printf("\033[0;32mOK!\n\033[0m");
+//	else
+//		printf("\033[0;31mKO\n\033[0m");
+//}
+
+// int	main(void)
+//{
+//	test1();
+//	test2();
+//	return (0);
+//}
