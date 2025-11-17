@@ -1,54 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 20:06:58 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/17 17:56:31 by lbolea           ###   ########.fr       */
+/*   Created: 2025/11/17 17:28:03 by lbolea            #+#    #+#             */
+/*   Updated: 2025/11/17 17:53:31 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
+#include <unistd.h>
 
-size_t	ft_strlen(const char *s)
+void	ft_putchar_fd(char c, int fd)
 {
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	write(fd, &c, 1);
 }
 
 // void	test1(void)
 //{
+//	int		i;
+//	int		len;
 //	char	*str;
 
-//	str = "Bonjour les terriens !\0";
-//	if ((ft_strlen(str) == strlen(str)))
-//		printf("\033[0;32mOK!\n\033[0m");
-//	else
-//		printf("\033[0;31mKO\n\033[0m");
-//}
-
-// void	test2(void)
-//{
-//	char	*str;
-
-//	str = "\0";
-//	if ((ft_strlen(str) == strlen(str)))
-//		printf("\033[0;32mOK!\n\033[0m");
-//	else
-//		printf("\033[0;31mKO\n\033[0m");
+//	i = 0;
+//	str = "J'aime les chocolatines.\0";
+//	len = ft_strlen(str);
+//	while (i < len)
+//	{
+//		ft_putchar_fd(str[i], 1);
+//		i++;
+//	}
 //}
 
 // int	main(void)
 //{
 //	test1();
-//	test2();
 //	return (0);
 //}

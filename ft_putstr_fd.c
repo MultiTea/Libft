@@ -1,54 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 20:06:58 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/17 17:56:31 by lbolea           ###   ########.fr       */
+/*   Created: 2025/11/17 17:44:13 by lbolea            #+#    #+#             */
+/*   Updated: 2025/11/17 17:56:41 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
+#include <unistd.h>
 
-size_t	ft_strlen(const char *s)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int	i;
+	unsigned int	i;
+	unsigned int	s_len;
 
 	i = 0;
-	while (s[i] != '\0')
+	s_len = ft_strlen(s);
+	while (i < s_len)
+	{
+		ft_putchar_fd(s[i], fd);
 		i++;
-	return (i);
+	}
 }
 
 // void	test1(void)
 //{
+//	int		i;
 //	char	*str;
 
-//	str = "Bonjour les terriens !\0";
-//	if ((ft_strlen(str) == strlen(str)))
-//		printf("\033[0;32mOK!\n\033[0m");
-//	else
-//		printf("\033[0;31mKO\n\033[0m");
-//}
-
-// void	test2(void)
-//{
-//	char	*str;
-
-//	str = "\0";
-//	if ((ft_strlen(str) == strlen(str)))
-//		printf("\033[0;32mOK!\n\033[0m");
-//	else
-//		printf("\033[0;31mKO\n\033[0m");
+//	i = 0;
+//	str = "J'aime les chocolatines.\0";
+//	ft_putstr_fd(str, 1);
 //}
 
 // int	main(void)
 //{
 //	test1();
-//	test2();
 //	return (0);
 //}
