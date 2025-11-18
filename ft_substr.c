@@ -6,7 +6,7 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 18:23:55 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/17 21:50:20 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/18 18:08:23 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	s_len = ft_strlen(s);
 	i = 0;
-	str = malloc(len * sizeof(char));
+	if (start >= s_len)
+		return (ft_strdup(""));
+	str = malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	while (i < len && s_len != 0)
@@ -30,6 +32,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		str[i] = *(char *)&s[start + i];
 		i++;
 	}
+	str[i] = '\0';
 	return (str);
 }
 
@@ -65,11 +68,20 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 //	printf("%s\n", ft_substr(str, 0, 30));
 //}
 
+// void	test5(void)
+//{
+//	char	*str;
+
+//	str = "";
+//	printf("%s\n", ft_substr(str, 0, 0));
+//}
+
 // int	main(void)
 //{
 //	test1();
 //	test2();
 //	test3();
 //	test4();
+//	test5();
 //	return (0);
 //}
