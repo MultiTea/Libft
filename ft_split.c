@@ -6,7 +6,7 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 15:22:36 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/19 19:04:49 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/19 19:50:03 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ static int	add_words(char **array, char const *s, char c)
 	size_t	i;
 	size_t	j;
 	size_t	start;
-	size_t	len;
 
 	i = 0;
 	j = 0;
@@ -70,8 +69,7 @@ static int	add_words(char **array, char const *s, char c)
 			start = i;
 			while (s[i] != c && s[i])
 				i++;
-			len = i - start;
-			array[j] = ft_substr(s, start, len);
+			array[j] = ft_substr(s, start, (i - start));
 			if (!array[j])
 				return (ft_free(&array[j], j), 0);
 			j++;
@@ -90,7 +88,10 @@ char	**ft_split(char const *s, char c)
 	words = token_count(s, c);
 	array = malloc((words + 1) * sizeof(char *));
 	if (!array)
+	{
+		ft_free(array, words);
 		return (NULL);
+	}
 	if (!add_words(array, s, c))
 		ft_free(array, words);
 	array[words] = NULL;
@@ -106,7 +107,7 @@ void	count_test(void)
 	text = ",,Je,ne,sais,,pas,comment,,,,ça,marche,,,,,le,CSV,,,,,,,,,,,.";
 	str = ft_strdup(text);
 	c = ',';
-	printf("%zu", token_count(str, c));
+	printf("Number of words: %zu\n", token_count(str, c));
 	free(str);
 	return ;
 }
@@ -122,6 +123,7 @@ void	test1(void)
 	str = ft_strdup(text);
 	c = ",";
 	token = strtok(str, c);
+	printf("--- REAL FUNCTION ---\n");
 	while (token != NULL)
 	{
 		printf("%s\n", token);
@@ -141,6 +143,7 @@ void	test2(void)
 	text = ",,Je,ne,sais,,pas,comment,,,,ça,marche,,,,,le,CSV,,,,,,,,,,,.";
 	c = ',';
 	token = ft_split(text, c);
+	printf("--- MY FUNCTION ---\n");
 	if (token)
 	{
 		i = 0;
@@ -149,8 +152,45 @@ void	test2(void)
 			printf("%s\n", token[i]);
 			i++;
 		}
+		while (i >= 0)
+		{
+			free(token[i]);
+			i--;
+		}
+		free(token);
 	}
-	free(token);
+	return ;
+}
+
+void	test3(void)
+{
+	char	*text;
+	char	c;
+
+	text = "";
+	c = ',';
+	printf("EMPTY STRING  ");
+	printf("%c", *(char *)ft_split(text, c));
+	if (*(char *)ft_split(text, c) == 0)
+		printf("\033[0;32mOK!\n\033[0m");
+	else
+		printf("\033[0;31mKO\n\033[0m");
+	return ;
+}
+
+void	test4(void)
+{
+	char	*text;
+	char	*c;
+
+	text = "";
+	c = "";
+	printf("ALL PARAMS EMPTY  ");
+	printf("%c", *(char *)ft_split(text, *(char *)c));
+	if (*(char *)ft_split(text, *(char *)c) == 0)
+		printf("\033[0;32mOK!\n\033[0m");
+	else
+		printf("\033[0;31mKO\n\033[0m");
 	return ;
 }
 
@@ -159,5 +199,7 @@ int	main(void)
 	// count_test();
 	test1();
 	test2();
+	test3();
+	test4();
 	return (0);
 }
