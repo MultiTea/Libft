@@ -1,0 +1,163 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/19 15:22:36 by lbolea            #+#    #+#             */
+/*   Updated: 2025/11/19 19:04:49 by lbolea           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+static size_t	token_count(char const *s, char c)
+{
+	size_t	token;
+	size_t	i;
+	int		is_word;
+
+	token = 0;
+	i = 0;
+	while (s[i])
+	{
+		is_word = 0;
+		while (s[i] == c && s[i])
+			i++;
+		while (s[i] != c && s[i])
+		{
+			if (is_word == 0)
+				token++;
+			is_word = 1;
+			i++;
+		}
+	}
+	return (token);
+}
+
+static void	ft_free(char **array, size_t position)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < position)
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
+}
+
+static int	add_words(char **array, char const *s, char c)
+{
+	size_t	i;
+	size_t	j;
+	size_t	start;
+	size_t	len;
+
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		while (s[i] == c)
+			i++;
+		if (s[i])
+		{
+			start = i;
+			while (s[i] != c && s[i])
+				i++;
+			len = i - start;
+			array[j] = ft_substr(s, start, len);
+			if (!array[j])
+				return (ft_free(&array[j], j), 0);
+			j++;
+		}
+	}
+	return (1);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**array;
+	size_t	words;
+
+	if (!s)
+		return (NULL);
+	words = token_count(s, c);
+	array = malloc((words + 1) * sizeof(char *));
+	if (!array)
+		return (NULL);
+	if (!add_words(array, s, c))
+		ft_free(array, words);
+	array[words] = NULL;
+	return (array);
+}
+
+void	count_test(void)
+{
+	char	*text;
+	char	*str;
+	char	c;
+
+	text = ",,Je,ne,sais,,pas,comment,,,,ça,marche,,,,,le,CSV,,,,,,,,,,,.";
+	str = ft_strdup(text);
+	c = ',';
+	printf("%zu", token_count(str, c));
+	free(str);
+	return ;
+}
+
+void	test1(void)
+{
+	char	*text;
+	char	*str;
+	char	*c;
+	char	*token;
+
+	text = ",,Je,ne,sais,,pas,comment,,,,ça,marche,,,,,le,CSV,,,,,,,,,,,.";
+	str = ft_strdup(text);
+	c = ",";
+	token = strtok(str, c);
+	while (token != NULL)
+	{
+		printf("%s\n", token);
+		token = strtok(NULL, c);
+	}
+	free(str);
+	return ;
+}
+
+void	test2(void)
+{
+	char	*text;
+	char	c;
+	char	**token;
+	int		i;
+
+	text = ",,Je,ne,sais,,pas,comment,,,,ça,marche,,,,,le,CSV,,,,,,,,,,,.";
+	c = ',';
+	token = ft_split(text, c);
+	if (token)
+	{
+		i = 0;
+		while (token[i] != NULL)
+		{
+			printf("%s\n", token[i]);
+			i++;
+		}
+	}
+	free(token);
+	return ;
+}
+
+int	main(void)
+{
+	// count_test();
+	test1();
+	test2();
+	return (0);
+}
