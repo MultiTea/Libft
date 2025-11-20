@@ -6,13 +6,14 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 17:59:47 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/17 18:22:47 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/20 17:23:37 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
-#include <unistd.h>
+
+//#include <limits.h>
+//#include <unistd.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -31,17 +32,17 @@ void	ft_putnbr_fd(int n, int fd)
 
 // void	test1(void)
 //{
-//	int	i;
-
-//	i = INT_MIN;
-//	ft_putnbr_fd(i, 1);
-//	ft_putchar_fd('\n', 1);
-//	i = INT_MAX;
-//	ft_putnbr_fd(i, 1);
-//	ft_putchar_fd('\n', 1);
-//	i = -42;
-//	ft_putnbr_fd(i, 1);
-//	ft_putchar_fd('\n', 1);
+//	// int	i;
+//	// i = INT_MIN;
+//	// ft_putnbr_fd(i, 1);
+//	// ft_putchar_fd('\n', 1);
+//	// i = INT_MAX;
+//	// ft_putnbr_fd(i, 1);
+//	// ft_putchar_fd('\n', 1);
+//	// i = -42;
+//	// ft_putnbr_fd(i, 1);
+//	// ft_putchar_fd('\n', 1);
+//	ft_putnbr_fd(5, 1);
 //}
 
 // int	main(void)

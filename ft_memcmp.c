@@ -6,12 +6,14 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 13:04:27 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/14 16:42:45 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/20 15:07:31 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
+
+//#include <stdio.h>
+//#include <string.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -26,103 +28,103 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
 
-void	test1(void)
-{
-	char	*str1;
-	char	*str2;
-	size_t	count;
+// void	test1(void)
+//{
+//	char	*str1;
+//	char	*str2;
+//	size_t	count;
 
-	str1 = "Mais si je suis très net !\0";
-	str2 = "Mais si je suis très flou !\0";
-	count = 20;
-	if (memcmp(str1, str2, count) == ft_memcmp(str1, str2, count))
-		printf("\033[0;32mOK!\n\033[0m");
-	else
-		printf("\033[0;31mKO\n\033[0m");
-}
+//	str1 = "Mais si je suis très net !\0";
+//	str2 = "Mais si je suis très flou !\0";
+//	count = 20;
+//	if (memcmp(str1, str2, count) == ft_memcmp(str1, str2, count))
+//		printf("\033[0;32mOK!\n\033[0m");
+//	else
+//		printf("\033[0;31mKO\n\033[0m");
+//}
 
-void	test2(void)
-{
-	char	*str1;
-	char	*str2;
-	size_t	count;
+// void	test2(void)
+//{
+//	char	*str1;
+//	char	*str2;
+//	size_t	count;
 
-	str1 = "Mais si je suis très net !\0";
-	str2 = "Mais si je suis très flou !\0";
-	count = 26;
-	if (memcmp(str1, str2, count) != ft_memcmp(str1, str2, count))
-		printf("\033[0;32mOK!\n\033[0m");
-	else
-		printf("\033[0;31mKO\n\033[0m");
-}
+//	str1 = "Mais si je suis très net !\0";
+//	str2 = "Mais si je suis très flou !\0";
+//	count = 26;
+//	if (memcmp(str1, str2, count) != ft_memcmp(str1, str2, count))
+//		printf("\033[0;32mOK!\n\033[0m");
+//	else
+//		printf("\033[0;31mKO\n\033[0m");
+//}
 
-void	test3(void)
-{
-	char	*str1;
-	char	*str2;
-	size_t	count;
+// void	test3(void)
+//{
+//	char	*str1;
+//	char	*str2;
+//	size_t	count;
 
-	str1 = "\0";
-	str2 = "\0";
-	count = 5;
-	if (memcmp(str1, str2, count) == ft_memcmp(str1, str2, count))
-		printf("\033[0;32mOK!\n\033[0m");
-	else
-		printf("\033[0;31mKO\n\033[0m");
-}
+//	str1 = "\0";
+//	str2 = "\0";
+//	count = 5;
+//	if (memcmp(str1, str2, count) == ft_memcmp(str1, str2, count))
+//		printf("\033[0;32mOK!\n\033[0m");
+//	else
+//		printf("\033[0;31mKO\n\033[0m");
+//}
 
-void	test4(void)
-{
-	char	*str1;
-	char	*str2;
-	size_t	count;
+// void	test4(void)
+//{
+//	char	*str1;
+//	char	*str2;
+//	size_t	count;
 
-	str1 = "";
-	str2 = "";
-	count = 5;
-	if (memcmp(str1, str2, count) == ft_memcmp(str1, str2, count))
-		printf("\033[0;32mOK!\n\033[0m");
-	else
-		printf("\033[0;31mKO\n\033[0m");
-}
+//	str1 = "";
+//	str2 = "";
+//	count = 5;
+//	if (memcmp(str1, str2, count) == ft_memcmp(str1, str2, count))
+//		printf("\033[0;32mOK!\n\033[0m");
+//	else
+//		printf("\033[0;31mKO\n\033[0m");
+//}
 
-void	test5(void)
-{
-	char	*str1;
-	char	*str2;
-	size_t	count;
+// void	test5(void)
+//{
+//	char	*str1;
+//	char	*str2;
+//	size_t	count;
 
-	str1 = "Test";
-	str2 = "\0";
-	count = 5;
-	if (memcmp(str1, str2, count) == ft_memcmp(str1, str2, count))
-		printf("\033[0;32mOK!\n\033[0m");
-	else
-		printf("\033[0;31mKO\n\033[0m");
-}
+//	str1 = "Test";
+//	str2 = "\0";
+//	count = 5;
+//	if (memcmp(str1, str2, count) == ft_memcmp(str1, str2, count))
+//		printf("\033[0;32mOK!\n\033[0m");
+//	else
+//		printf("\033[0;31mKO\n\033[0m");
+//}
 
-void	test6(void)
-{
-	char	*str1;
-	char	*str2;
-	size_t	count;
+// void	test6(void)
+//{
+//	char	*str1;
+//	char	*str2;
+//	size_t	count;
 
-	str1 = "Test";
-	str2 = "";
-	count = -1;
-	if (memcmp(str1, str2, count) == ft_memcmp(str1, str2, count))
-		printf("\033[0;32mOK!\n\033[0m");
-	else
-		printf("\033[0;31mKO\n\033[0m");
-}
+//	str1 = "Test";
+//	str2 = "";
+//	count = -1;
+//	if (memcmp(str1, str2, count) == ft_memcmp(str1, str2, count))
+//		printf("\033[0;32mOK!\n\033[0m");
+//	else
+//		printf("\033[0;31mKO\n\033[0m");
+//}
 
-int	main(void)
-{
-	test1();
-	test2();
-	test3();
-	test4();
-	test5();
-	test6();
-	return (0);
-}
+// int	main(void)
+//{
+//	test1();
+//	test2();
+//	test3();
+//	test4();
+//	test5();
+//	test6();
+//	return (0);
+//}

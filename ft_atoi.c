@@ -6,14 +6,16 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 21:21:18 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/15 19:20:23 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/20 15:04:43 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
+
+//#include <limits.h>
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <string.h>
 
 int	ft_atoi(const char *nptr)
 {
@@ -43,51 +45,51 @@ int	ft_atoi(const char *nptr)
 	return (nb * sign);
 }
 
-void	test1(void)
-{
-	char	*c;
+// void	test1(void)
+//{
+//	char	*c;
 
-	c = "+123456";
-	printf("%d\n", atoi(c));
-	printf("%d\n", ft_atoi(c));
-	if (atoi(c) == ft_atoi(c))
-		printf("\033[0;32mOK!\n\033[0m");
-	else
-		printf("\033[0;31mKO\n\033[0m");
-}
+//	c = "+123456";
+//	printf("%d\n", atoi(c));
+//	printf("%d\n", ft_atoi(c));
+//	if (atoi(c) == ft_atoi(c))
+//		printf("\033[0;32mOK!\n\033[0m");
+//	else
+//		printf("\033[0;31mKO\n\033[0m");
+//}
 
-void	test2(void)
-{
-	char	*c;
+// void	test2(void)
+//{
+//	char	*c;
 
-	c = "+0042";
-	printf("%d\n", atoi(c));
-	printf("%d\n", ft_atoi(c));
-}
+//	c = "+0042";
+//	printf("%d\n", atoi(c));
+//	printf("%d\n", ft_atoi(c));
+//}
 
-void	test3(void)
-{
-	char	*c;
+// void	test3(void)
+//{
+//	char	*c;
 
-	c = "-0042";
-	printf("%d\n", atoi(c));
-	printf("%d\n", ft_atoi(c));
-}
+//	c = "-0042";
+//	printf("%d\n", atoi(c));
+//	printf("%d\n", ft_atoi(c));
+//}
 
-void	test4(void)
-{
-	char	*c;
+// void	test4(void)
+//{
+//	char	*c;
 
-	c = "2147483648";
-	printf("%d\n", atoi(c));
-	printf("%d\n", ft_atoi(c));
-}
+//	c = "2147483648";
+//	printf("%d\n", atoi(c));
+//	printf("%d\n", ft_atoi(c));
+//}
 
-int	main(void)
-{
-	test1();
-	test2();
-	test3();
-	test4();
-	return (0);
-}
+// int	main(void)
+//{
+//	test1();
+//	test2();
+//	test3();
+//	test4();
+//	return (0);
+//}

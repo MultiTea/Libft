@@ -6,12 +6,13 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 20:18:56 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/17 22:10:17 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/20 15:11:45 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
+//#include <stdio.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -33,22 +34,22 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (trmd);
 }
 
-void	test1(void)
-{
-	char		*str;
-	const char	*e;
+// void	test1(void)
+//{
+//	char		*str;
+//	const char	*e;
 
-	e = "x";
-	str = "xxx_SnIpER_du_92_xxx";
-	printf("%s", ft_strtrim(str, e));
-	if (ft_strtrim(str, e))
-		printf("\033[0;32mOK!\n\033[0m");
-	else
-		printf("\033[0;31mKO\n\033[0m");
-}
+//	e = "x";
+//	str = "xxx_SnIpER_du_92_xxx";
+//	printf("%s", ft_strtrim(str, e));
+//	if (ft_strtrim(str, e))
+//		printf("\033[0;32mOK!\n\033[0m");
+//	else
+//		printf("\033[0;31mKO\n\033[0m");
+//}
 
-int	main(void)
-{
-	test1();
-	return (0);
-}
+// int	main(void)
+//{
+//	test1();
+//	return (0);
+//}

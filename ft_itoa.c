@@ -6,12 +6,14 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:39:02 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/20 12:35:57 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/20 15:06:57 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
+
+//#include <stdio.h>
+//#include <stdlib.h>
 
 static int	numlen(int n)
 {
@@ -57,43 +59,43 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-void	test1(void)
-{
-	int		nb;
-	char	*str;
+// void	test1(void)
+//{
+//	int		nb;
+//	char	*str;
 
-	nb = -123;
-	str = ft_itoa(nb);
-	printf("%s\n", str);
-	free(str);
-}
+//	nb = -123;
+//	str = ft_itoa(nb);
+//	printf("%s\n", str);
+//	free(str);
+//}
 
-void	test2(void)
-{
-	int		nb;
-	char	*str;
+// void	test2(void)
+//{
+//	int		nb;
+//	char	*str;
 
-	nb = 00123;
-	str = ft_itoa(nb);
-	printf("%s\n", str);
-	free(str);
-}
+//	nb = 00123;
+//	str = ft_itoa(nb);
+//	printf("%s\n", str);
+//	free(str);
+//}
 
-void	test3(void)
-{
-	long	nb;
-	char	*str;
+// void	test3(void)
+//{
+//	long	nb;
+//	char	*str;
 
-	nb = 5013213546498789320;
-	str = ft_itoa(nb);
-	printf("%s\n", str);
-	free(str);
-}
+//	nb = 5013213546498789320;
+//	str = ft_itoa(nb);
+//	printf("%s\n", str);
+//	free(str);
+//}
 
-int	main(void)
-{
-	test1();
-	test2();
-	test3();
-	return (0);
-}
+// int	main(void)
+//{
+//	test1();
+//	test2();
+//	test3();
+//	return (0);
+//}

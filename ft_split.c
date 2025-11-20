@@ -6,14 +6,15 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 15:22:36 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/19 19:50:03 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/20 15:09:26 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <string.h>
 
 static size_t	token_count(char const *s, char c)
 {
@@ -98,108 +99,108 @@ char	**ft_split(char const *s, char c)
 	return (array);
 }
 
-void	count_test(void)
-{
-	char	*text;
-	char	*str;
-	char	c;
+// void	count_test(void)
+//{
+//	char	*text;
+//	char	*str;
+//	char	c;
 
-	text = ",,Je,ne,sais,,pas,comment,,,,ça,marche,,,,,le,CSV,,,,,,,,,,,.";
-	str = ft_strdup(text);
-	c = ',';
-	printf("Number of words: %zu\n", token_count(str, c));
-	free(str);
-	return ;
-}
+//	text = ",,Je,ne,sais,,pas,comment,,,,ça,marche,,,,,le,CSV,,,,,,,,,,,.";
+//	str = ft_strdup(text);
+//	c = ',';
+//	printf("Number of words: %zu\n", token_count(str, c));
+//	free(str);
+//	return ;
+//}
 
-void	test1(void)
-{
-	char	*text;
-	char	*str;
-	char	*c;
-	char	*token;
+// void	test1(void)
+//{
+//	char	*text;
+//	char	*str;
+//	char	*c;
+//	char	*token;
 
-	text = ",,Je,ne,sais,,pas,comment,,,,ça,marche,,,,,le,CSV,,,,,,,,,,,.";
-	str = ft_strdup(text);
-	c = ",";
-	token = strtok(str, c);
-	printf("--- REAL FUNCTION ---\n");
-	while (token != NULL)
-	{
-		printf("%s\n", token);
-		token = strtok(NULL, c);
-	}
-	free(str);
-	return ;
-}
+//	text = ",,Je,ne,sais,,pas,comment,,,,ça,marche,,,,,le,CSV,,,,,,,,,,,.";
+//	str = ft_strdup(text);
+//	c = ",";
+//	token = strtok(str, c);
+//	printf("--- REAL FUNCTION ---\n");
+//	while (token != NULL)
+//	{
+//		printf("%s\n", token);
+//		token = strtok(NULL, c);
+//	}
+//	free(str);
+//	return ;
+//}
 
-void	test2(void)
-{
-	char	*text;
-	char	c;
-	char	**token;
-	int		i;
+// void	test2(void)
+//{
+//	char	*text;
+//	char	c;
+//	char	**token;
+//	int		i;
 
-	text = ",,Je,ne,sais,,pas,comment,,,,ça,marche,,,,,le,CSV,,,,,,,,,,,.";
-	c = ',';
-	token = ft_split(text, c);
-	printf("--- MY FUNCTION ---\n");
-	if (token)
-	{
-		i = 0;
-		while (token[i] != NULL)
-		{
-			printf("%s\n", token[i]);
-			i++;
-		}
-		while (i >= 0)
-		{
-			free(token[i]);
-			i--;
-		}
-		free(token);
-	}
-	return ;
-}
+//	text = ",,Je,ne,sais,,pas,comment,,,,ça,marche,,,,,le,CSV,,,,,,,,,,,.";
+//	c = ',';
+//	token = ft_split(text, c);
+//	printf("--- MY FUNCTION ---\n");
+//	if (token)
+//	{
+//		i = 0;
+//		while (token[i] != NULL)
+//		{
+//			printf("%s\n", token[i]);
+//			i++;
+//		}
+//		while (i >= 0)
+//		{
+//			free(token[i]);
+//			i--;
+//		}
+//		free(token);
+//	}
+//	return ;
+//}
 
-void	test3(void)
-{
-	char	*text;
-	char	c;
+// void	test3(void)
+//{
+//	char	*text;
+//	char	c;
 
-	text = "";
-	c = ',';
-	printf("EMPTY STRING  ");
-	printf("%c", *(char *)ft_split(text, c));
-	if (*(char *)ft_split(text, c) == 0)
-		printf("\033[0;32mOK!\n\033[0m");
-	else
-		printf("\033[0;31mKO\n\033[0m");
-	return ;
-}
+//	text = "";
+//	c = ',';
+//	printf("EMPTY STRING  ");
+//	printf("%c", *(char *)ft_split(text, c));
+//	if (*(char *)ft_split(text, c) == 0)
+//		printf("\033[0;32mOK!\n\033[0m");
+//	else
+//		printf("\033[0;31mKO\n\033[0m");
+//	return ;
+//}
 
-void	test4(void)
-{
-	char	*text;
-	char	*c;
+// void	test4(void)
+//{
+//	char	*text;
+//	char	*c;
 
-	text = "";
-	c = "";
-	printf("ALL PARAMS EMPTY  ");
-	printf("%c", *(char *)ft_split(text, *(char *)c));
-	if (*(char *)ft_split(text, *(char *)c) == 0)
-		printf("\033[0;32mOK!\n\033[0m");
-	else
-		printf("\033[0;31mKO\n\033[0m");
-	return ;
-}
+//	text = "";
+//	c = "";
+//	printf("ALL PARAMS EMPTY  ");
+//	printf("%c", *(char *)ft_split(text, *(char *)c));
+//	if (*(char *)ft_split(text, *(char *)c) == 0)
+//		printf("\033[0;32mOK!\n\033[0m");
+//	else
+//		printf("\033[0;31mKO\n\033[0m");
+//	return ;
+//}
 
-int	main(void)
-{
-	// count_test();
-	test1();
-	test2();
-	test3();
-	test4();
-	return (0);
-}
+// int	main(void)
+//{
+//	// count_test();
+//	test1();
+//	test2();
+//	test3();
+//	test4();
+//	return (0);
+//}

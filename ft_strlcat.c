@@ -6,18 +6,17 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 16:32:34 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/18 14:33:07 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/20 17:35:17 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-//#include <bsd/string.h>
-//#include <signal.h>
-//#include <stdio.h>
-//#include <stdlib.h>
-//#include <string.h>
-//#include <unistd.h>
+#include <bsd/string.h>
+#include <signal.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t siz)
 {
@@ -42,16 +41,16 @@ size_t	ft_strlcat(char *dst, const char *src, size_t siz)
 	return (d_len + s_len);
 }
 
-// void	segfault_handler(int signal)
-//{
-//	(void)signal;
-//	printf("\033[0;31m");
-//	printf("SEGFAULT ");
-//	printf("\033[0;32m");
-//	printf("OK!\n");
-//	printf("\033[0m");
-//	exit(1);
-//}
+void	segfault_handler(int signal)
+{
+	(void)signal;
+	printf("\033[0;31m");
+	printf("SEGFAULT ");
+	printf("\033[0;32m");
+	printf("OK!\n");
+	printf("\033[0m");
+	exit(1);
+}
 
 // int	test1(void)
 //{
@@ -63,8 +62,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t siz)
 //	size_t	result1;
 //	size_t	result2;
 
-//	buff = 12o[12] = "coucou";
-
+//	buff = 12o [12] = "coucou";
 //	ko[11] = '\0';
 //	printf("\n--- SAME STRING ---\n");
 //	signal(SIGSEGV, segfault_handler);
@@ -83,60 +81,24 @@ size_t	ft_strlcat(char *dst, const char *src, size_t siz)
 //	return (0);
 //}
 
-// int	main(void)
-//{
-//	test1();
-//	test2();
-//	test3();
-//	return (0);
-//};
-//	ok[11] = '\0';
-//	oks[11] = '\0';
-//	ko[11] = '\0';
-//	kos[11] = '\0';
-//	printf("--- 2 DIFFERENT STRINGS WITH SMALL BUFFER ---\n");
-//	result1 = ft_strlcat(ko, kos, buff);
-//	result2 = strlcat(ok, oks, buff);
-//	if (result1 == result2)
-//	{
-//		printf("\033[0;32m");
-//		printf("OK!\n");
-//		printf("\033[0m");
-//	}
-//	else
-//	{
-//		printf("NOT OK!\n");
-//		printf("%zu != %zu", result1, result2);
-//	}
-//	return (0);
-//}
+void	test4(void)
+{
+	char	*dest;
 
-// int	test2(void)
-//{
-//	char	ko[12] = "coucou";
+	dest = (char *)malloc(sizeof(*dest) * 15);
+	memset(dest, 0, 15);
+	memset(dest, 'r', 6);
+	dest[10] = 'a';
+	printf("%zu", ft_strlcat(dest, "lorem ipsum dolor sit amet", 0));
+	write(1, "\n", 1);
+	write(1, dest, 15);
+}
 
-//	ko[11] = '\0';
-//	printf("\n--- SAME STRING ---\n");
-//	signal(SIGSEGV, segfault_handler);
-//	ft_strlcat(ko, ko, 29);
-//	return (0);
-//}
-
-// int	test3(void)
-//{
-//	char	ok[12] = "coucou";
-
-//	ok[11] = '\0';
-//	printf("\n--- TEST 3 ---\nOG:\n%s\n", ok);
-//	signal(SIGSEGV, segfault_handler);
-//	printf("%zu\n", strlcat(ok, ok, 29));
-//	return (0);
-//}
-
-// int	main(void)
-//{
-//	test1();
-//	test2();
-//	test3();
-//	return (0);
-//}
+int	main(void)
+{
+	// test1();
+	// test2();
+	// test3();
+	test4();
+	return (0);
+}

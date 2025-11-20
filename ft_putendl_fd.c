@@ -6,12 +6,13 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 17:53:58 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/17 17:59:34 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/20 15:08:41 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
+
+//#include <unistd.h>
 
 void	ft_putendl_fd(char *s, int fd)
 {
@@ -19,18 +20,18 @@ void	ft_putendl_fd(char *s, int fd)
 	write(fd, "\n", 1);
 }
 
-void	test1(void)
-{
-	int		i;
-	char	*str;
+// void	test1(void)
+//{
+//	int		i;
+//	char	*str;
 
-	i = 0;
-	str = "J'aime les chocolatines.\0";
-	ft_putendl_fd(str, 1);
-}
+//	i = 0;
+//	str = "J'aime les chocolatines.\0";
+//	ft_putendl_fd(str, 1);
+//}
 
-int	main(void)
-{
-	test1();
-	return (0);
-}
+// int	main(void)
+//{
+//	test1();
+//	return (0);
+//}

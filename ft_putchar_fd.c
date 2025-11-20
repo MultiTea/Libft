@@ -6,12 +6,13 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 17:28:03 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/17 17:53:31 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/20 15:08:26 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
+
+//#include <unistd.h>
 
 void	ft_putchar_fd(char c, int fd)
 {

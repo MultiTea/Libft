@@ -6,12 +6,14 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 02:22:24 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/20 13:11:23 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/20 15:11:54 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <stdio.h>
+#include "libft.h"
+
+//#include <ctype.h>
+//#include <stdio.h>
 
 int	ft_tolower(int c)
 {

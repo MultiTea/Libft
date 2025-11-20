@@ -6,13 +6,15 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 20:06:58 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/17 17:56:31 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/20 15:10:46 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
+
+//#include <stddef.h>
+//#include <stdio.h>
+//#include <string.h>
 
 size_t	ft_strlen(const char *s)
 {

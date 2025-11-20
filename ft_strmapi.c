@@ -6,12 +6,13 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 12:36:31 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/20 13:28:24 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/20 15:10:54 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
+//#include <stdio.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -35,32 +36,32 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (str);
 }
 
-char	rot(unsigned int i, char c)
-{
-	return (i + c);
-}
+// char	rot(unsigned int i, char c)
+//{
+//	return (i + c);
+//}
 
-void	test1(void)
-{
-	char	*str;
+// void	test1(void)
+//{
+//	char	*str;
 
-	str = ft_strmapi("1234", rot);
-	printf("%s\n", str);
-	free(str);
-}
+//	str = ft_strmapi("1234", rot);
+//	printf("%s\n", str);
+//	free(str);
+//}
 
-void	test2(void)
-{
-	char	*str;
+// void	test2(void)
+//{
+//	char	*str;
 
-	str = ft_strmapi("", rot);
-	printf("%s\n", str);
-	free(str);
-}
+//	str = ft_strmapi("", rot);
+//	printf("%s\n", str);
+//	free(str);
+//}
 
-int	main(void)
-{
-	test1();
-	test2();
-	return (0);
-}
+// int	main(void)
+//{
+//	test1();
+//	test2();
+//	return (0);
+//}
