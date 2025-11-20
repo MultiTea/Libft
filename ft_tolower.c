@@ -6,7 +6,7 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 02:22:24 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/12 02:25:09 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/20 13:11:23 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,21 @@ int	ft_tolower(int c)
 		return (c);
 }
 
-void	test1(void)
-{
-	int	c;
-	int	result1;
-	int	result2;
+// void	test1(void)
+//{
+//	int	c;
+//	int	result1;
+//	int	result2;
 
-	c = 'A';
-	result1 = ft_tolower(c);
-	printf("%c", result1);
-	result2 = tolower(c);
-	printf("%c", result2);
-}
+//	c = 'A';
+//	result1 = ft_tolower(c);
+//	printf("%c", result1);
+//	result2 = tolower(c);
+//	printf("%c", result2);
+//}
 
-int	main(void)
-{
-	test1();
-	return (0);
-}
+// int	main(void)
+//{
+//	test1();
+//	return (0);
+//}

@@ -1,91 +1,59 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 22:39:02 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/20 12:35:57 by lbolea           ###   ########.fr       */
+/*   Created: 2025/11/20 12:36:31 by lbolea            #+#    #+#             */
+/*   Updated: 2025/11/20 13:28:24 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdio.h>
-#include <stdlib.h>
 
-static int	numlen(int n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	len;
-
-	len = 0;
-	if (n <= 0)
-		len = 1;
-	while (n != 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
-}
-
-char	*ft_itoa(int n)
-{
-	long			nbr;
-	unsigned int	len;
+	size_t			len;
+	unsigned int	i;
 	char			*str;
 
-	if (!n)
+	if (!s)
 		return (NULL);
-	nbr = n;
-	len = numlen(n);
+	len = ft_strlen(s);
+	i = 0;
 	str = malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	str[len] = '\0';
-	if (nbr < 0)
+	while (s[i] != '\0')
 	{
-		str[0] = '-';
-		nbr = -nbr;
-	}
-	if (nbr == 0)
-		str[0] = '0';
-	while (nbr > 0)
-	{
-		str[--len] = (nbr % 10) + '0';
-		nbr /= 10;
+		str[i] = f(i, s[i]);
+		i++;
 	}
 	return (str);
 }
 
+char	rot(unsigned int i, char c)
+{
+	return (i + c);
+}
+
 void	test1(void)
 {
-	int		nb;
 	char	*str;
 
-	nb = -123;
-	str = ft_itoa(nb);
+	str = ft_strmapi("1234", rot);
 	printf("%s\n", str);
 	free(str);
 }
 
 void	test2(void)
 {
-	int		nb;
 	char	*str;
 
-	nb = 00123;
-	str = ft_itoa(nb);
-	printf("%s\n", str);
-	free(str);
-}
-
-void	test3(void)
-{
-	long	nb;
-	char	*str;
-
-	nb = 5013213546498789320;
-	str = ft_itoa(nb);
+	str = ft_strmapi("", rot);
 	printf("%s\n", str);
 	free(str);
 }
@@ -94,6 +62,5 @@ int	main(void)
 {
 	test1();
 	test2();
-	test3();
 	return (0);
 }
