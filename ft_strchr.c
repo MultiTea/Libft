@@ -6,7 +6,7 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 19:27:10 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/17 22:05:05 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/21 14:43:32 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (c == s[i])
+		if ((unsigned char)c == (unsigned char)s[i])
 			return ((char *)&s[i]);
 		i++;
 	}
-	if (c == s[i])
+	if ((unsigned char)c == s[i])
 		return ((char *)&s[i]);
 	return (NULL);
 }

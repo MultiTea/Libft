@@ -6,7 +6,7 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 15:22:36 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/20 15:09:26 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/21 17:14:43 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,12 @@ static int	add_words(char **array, char const *s, char c)
 				i++;
 			array[j] = ft_substr(s, start, (i - start));
 			if (!array[j])
-				return (ft_free(&array[j], j), 0);
-			j++;
+			{
+				ft_free(array, j);
+				return (0);
+			}
 		}
+		j++;
 	}
 	return (1);
 }
@@ -89,16 +92,33 @@ char	**ft_split(char const *s, char c)
 	words = token_count(s, c);
 	array = malloc((words + 1) * sizeof(char *));
 	if (!array)
-	{
-		ft_free(array, words);
 		return (NULL);
-	}
 	if (!add_words(array, s, c))
-		ft_free(array, words);
+		return (NULL);
 	array[words] = NULL;
 	return (array);
 }
 
+// void	test7(void)
+//{
+//	char	*text;
+//	char	*str;
+//	char	*c;
+//	char	**token;
+
+//	printf("--- MY FUNCTION ---\n");
+//	text = "^^^1^^2a,^^^^3^^^^--h^^^^";
+//	str = ft_strdup(text);
+//	c = "^";
+//	token = ft_split(str, '^');
+//	while (*token != NULL)
+//	{
+//		printf("%s\n", *token);
+//		token++;
+//	}
+//	free(str);
+//	return ;
+//}
 // void	count_test(void)
 //{
 //	char	*text;
@@ -195,12 +215,45 @@ char	**ft_split(char const *s, char c)
 //	return ;
 //}
 
+// void	test5(void)
+//{
+//	char	*text;
+
+//	text = "^^^1^^2a,^^^^3^^^^--h^^^^";
+//	printf("%s", ft_split(text, '^')[0]);
+//	return ;
+//}
+
+// void	test6(void)
+//{
+//	char	*text;
+//	char	*str;
+//	char	*c;
+//	char	*token;
+
+//	text = "^^^1^^2a,^^^^3^^^^--h^^^^";
+//	str = ft_strdup(text);
+//	c = "^";
+//	token = strtok(str, c);
+//	printf("--- REAL FUNCTION ---\n");
+//	while (token != NULL)
+//	{
+//		printf("%s\n", token);
+//		token = strtok(NULL, c);
+//	}
+//	free(str);
+//	return ;
+//}
+
 // int	main(void)
 //{
-//	// count_test();
+//	count_test();
 //	test1();
 //	test2();
 //	test3();
 //	test4();
+//	test5();
+//	test6();
+//	test7();
 //	return (0);
 //}

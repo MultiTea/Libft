@@ -6,7 +6,7 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 13:29:11 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/20 15:09:49 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/21 15:04:13 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 //#include <stdio.h>
 
-void	ft_striteri(char *s, void(f)(unsigned int, char *))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
 

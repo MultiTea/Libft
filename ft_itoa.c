@@ -6,7 +6,7 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:39:02 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/20 15:06:57 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/21 16:06:16 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ char	*ft_itoa(int n)
 	unsigned int	len;
 	char			*str;
 
-	if (!n)
-		return (NULL);
 	nbr = n;
 	len = numlen(n);
 	str = malloc((len + 1) * sizeof(char));
@@ -64,7 +62,7 @@ char	*ft_itoa(int n)
 //	int		nb;
 //	char	*str;
 
-//	nb = -123;
+//	nb = -623;
 //	str = ft_itoa(nb);
 //	printf("%s\n", str);
 //	free(str);
@@ -75,7 +73,7 @@ char	*ft_itoa(int n)
 //	int		nb;
 //	char	*str;
 
-//	nb = 00123;
+//	nb = 156;
 //	str = ft_itoa(nb);
 //	printf("%s\n", str);
 //	free(str);
@@ -86,7 +84,7 @@ char	*ft_itoa(int n)
 //	long	nb;
 //	char	*str;
 
-//	nb = 5013213546498789320;
+//	nb = -0;
 //	str = ft_itoa(nb);
 //	printf("%s\n", str);
 //	free(str);
@@ -94,8 +92,8 @@ char	*ft_itoa(int n)
 
 // int	main(void)
 //{
-//	test1();
-//	test2();
+//	// test1();
+//	// test2();
 //	test3();
 //	return (0);
 //}

@@ -6,13 +6,14 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 15:19:26 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/20 17:00:20 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/21 15:04:39 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdbool.h>
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>

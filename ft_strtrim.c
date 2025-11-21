@@ -6,7 +6,7 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 20:18:56 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/20 15:11:45 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/21 14:58:53 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (ft_strdup(s1));
 	start = 0;
 	end = ft_strlen(s1) - 1;
-	while (ft_strchr(&s1[start], *(int *)set))
+	while (ft_strchr(set, *(int *)&s1[start]))
 		start++;
-	while (ft_strchr(&s1[end], *(int *)set))
+	while (ft_strchr(set, *(int *)&s1[end]))
 		end--;
 	trmd = ft_substr(s1, start, ((end - start) + 1));
 	return (trmd);

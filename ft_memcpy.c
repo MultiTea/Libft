@@ -6,7 +6,7 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 14:25:51 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/20 15:07:42 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/21 14:34:23 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	d = dest;
 	s = (unsigned char *)src;
-	while (i < n)
+	while (i < n && (d || s))
 	{
 		d[i] = s[i];
 		i++;

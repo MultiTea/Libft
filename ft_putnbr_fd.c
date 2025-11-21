@@ -6,7 +6,7 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 17:59:47 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/20 17:23:37 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/21 14:09:57 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (nb >= 10)
 		ft_putnbr_fd(nb / 10, fd);
-	ft_putchar_fd((nb % 10) + '0', 1);
+	ft_putchar_fd((nb % 10) + '0', fd);
 }
 
 // void	test1(void)

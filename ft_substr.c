@@ -6,7 +6,7 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 18:23:55 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/18 18:08:23 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/21 16:05:04 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,24 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*str;
-	unsigned int	s_len;
-	unsigned int	i;
+	char	*str;
+	size_t	s_len;
+	size_t	real_len;
+	size_t	i;
 
+	if (!s)
+		return (NULL);
 	s_len = ft_strlen(s);
-	i = 0;
 	if (start >= s_len)
 		return (ft_strdup(""));
-	str = malloc((len + 1) * sizeof(char));
+	real_len = s_len - start;
+	if (real_len > len)
+		real_len = len;
+	str = malloc((real_len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
-	while (i < len && s_len != 0)
+	i = 0;
+	while (i < real_len)
 	{
 		str[i] = *(char *)&s[start + i];
 		i++;

@@ -6,51 +6,54 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 16:32:34 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/20 17:35:17 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/21 14:09:03 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <bsd/string.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
+
+//#include <bsd/string.h>
+//#include <signal.h>
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <string.h>
+//#include <unistd.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t siz)
 {
 	size_t	d_len;
 	size_t	s_len;
+	size_t	i;
 
-	s_len = 0;
-	d_len = 0;
-	while (dst[d_len] != '\0' && d_len < siz)
-		d_len++;
-	while (src[s_len] != '\0' && siz > (d_len + s_len + 1))
-	{
-		dst[d_len + s_len] = src[s_len];
-		s_len++;
-	}
+	s_len = ft_strlen(src);
+	i = 0;
+	if (siz == 0)
+		return (s_len);
+	d_len = ft_strlen(dst);
 	if (d_len >= siz)
 		return (siz + s_len);
-	if (d_len + s_len < siz)
-		dst[d_len + s_len] = '\0';
-	while (src[s_len] != '\0')
-		s_len++;
+	while (src[i] != '\0' && siz > (d_len + i + 1))
+	{
+		dst[d_len + i] = src[i];
+		i++;
+	}
+	if (d_len + i < siz)
+		dst[d_len + i] = '\0';
+	while (src[i] != '\0')
+		i++;
 	return (d_len + s_len);
 }
 
-void	segfault_handler(int signal)
-{
-	(void)signal;
-	printf("\033[0;31m");
-	printf("SEGFAULT ");
-	printf("\033[0;32m");
-	printf("OK!\n");
-	printf("\033[0m");
-	exit(1);
-}
+// void	segfault_handler(int signal)
+//{
+//	(void)signal;
+//	printf("\033[0;31m");
+//	printf("SEGFAULT ");
+//	printf("\033[0;32m");
+//	printf("OK!\n");
+//	printf("\033[0m");
+//	exit(1);
+//}
 
 // int	test1(void)
 //{
@@ -81,24 +84,24 @@ void	segfault_handler(int signal)
 //	return (0);
 //}
 
-void	test4(void)
-{
-	char	*dest;
-
-	dest = (char *)malloc(sizeof(*dest) * 15);
-	memset(dest, 0, 15);
-	memset(dest, 'r', 6);
-	dest[10] = 'a';
-	printf("%zu", ft_strlcat(dest, "lorem ipsum dolor sit amet", 0));
-	write(1, "\n", 1);
-	write(1, dest, 15);
-}
-
-int	main(void)
-{
-	// test1();
-	// test2();
-	// test3();
-	test4();
-	return (0);
-}
+// void	test4(void)
+//{
+// char	*dest;
+//
+// dest = (char *)malloc(sizeof(*dest) * 15);
+// memset(dest, 0, 15);
+// memset(dest, 'r', 6);
+// dest[10] = 'a';
+// printf("%zu", ft_strlcat(dest, "lorem ipsum dolor sit amet", 0));
+// write(1, "\n", 1);
+// write(1, dest, 15);
+//}
+//
+// int	main(void)
+//{
+// test1();
+// test2();
+// test3();
+// test4();
+// return (0);
+//}

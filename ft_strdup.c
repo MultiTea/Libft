@@ -6,7 +6,7 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 18:15:54 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/17 21:50:03 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/21 15:45:54 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,22 @@
 
 char	*ft_strdup(const char *s)
 {
-	int		len;
-	char	*str;
-	int		i;
+	size_t			len;
+	unsigned char	*str;
+	size_t			i;
 
 	len = ft_strlen(s);
-	str = (char *)malloc(sizeof(char) * (len + 1));
+	str = malloc(sizeof(char) * (len + 1));
 	i = 0;
 	if (!str)
 		return (NULL);
-	while (s[i] != '\0')
+	while (s[i] != '\0' && i < len)
 	{
 		str[i] = s[i];
 		i++;
 	}
 	str[i] = '\0';
-	return (str);
+	return ((char *)str);
 }
 
 // void	test1(void)

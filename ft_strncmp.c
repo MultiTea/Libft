@@ -6,7 +6,7 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 10:52:37 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/20 15:11:12 by lbolea           ###   ########.fr       */
+/*   Updated: 2025/11/21 14:29:51 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,21 @@
 //#include <stdio.h>
 //#include <string.h>
 
+static bool	is_same_char(const char *s1, const char *s2, size_t i, size_t n)
+{
+	return (s1[i] && s2[i] && s1[i] == s2[i] && i < n - 1);
+}
+
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
+	size_t	i;
+
+	i = 0;
 	if (n == 0)
 		return (0);
-	while (((s1 && s2) != '\0') && (s1 == s2) && n > 0)
-	{
-		s1++;
-		s2++;
-		n--;
-	}
-	return ((unsigned char *)s2 - (unsigned char *)s1);
+	while (is_same_char(s1, s2, i, n))
+		i++;
+	return (*(unsigned char *)(s1 + i) - *(unsigned char *)(s2 + i));
 }
 
 // void	test1(void)
