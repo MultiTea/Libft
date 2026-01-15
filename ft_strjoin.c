@@ -6,7 +6,7 @@
 /*   By: lbolea <lbolea@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 13:45:07 by lbolea            #+#    #+#             */
-/*   Updated: 2025/11/20 15:10:17 by lbolea           ###   ########.fr       */
+/*   Updated: 2026/01/15 17:29:40 by lbolea           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,20 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	unsigned int	s1_len;
 	unsigned int	s2_len;
 
-	i = 0;
-	j = 0;
+	if (!s1 || !s2)
+		return (NULL);
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
 	str = malloc((s1_len + s2_len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
-	while (i < (s1_len))
-	{
-		str[i] = *(char *)&s1[i];
-		i++;
-	}
-	while (i + j < (s1_len + s2_len))
-	{
-		str[i + j] = *(char *)&s2[j];
-		j++;
-	}
-	str[i + j] = '\0';
+	i = -1;
+	while (++i < s1_len)
+		str[i] = s1[i];
+	j = -1;
+	while (++j < s2_len)
+		str[i + j] = s2[j];
+	str[s1_len + s2_len] = '\0';
 	return (str);
 }
 
